@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/components/interface1.dart';
-import 'package:flutter_application_1/components/interface2.dart';
+import 'package:flutter_application_1/components/menuCampos.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +11,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
-      home: const Interface2(title: 'Primeira Interface'),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.teal,
+        ),
+        routes: {
+          '/': (context) => MyHomePage(title: 'Projeto'),
+          '/menu': (context) => const MenuCampos(
+                title: 'Menu de Campos',
+              ),
+          /*  '/interface2': (context) => const Interface2(
+                title: 'Segunda Interface',
+              ),
+          '/interface3': (context) => const Interface3(
+                title: 'Terceira Interface',
+              ),
+          '/interface4': (context) => const Interface4(
+                title: 'Quarta Interface',
+             )*/
+        });
   }
 }
 
@@ -50,7 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   label: const Text('Cliente'),
                   icon: const Icon(Icons.person),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.popAndPushNamed(context, '/menu');
+                  },
                 ),
               ),
               SizedBox(

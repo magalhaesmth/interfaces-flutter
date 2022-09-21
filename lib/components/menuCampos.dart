@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Interface4 extends StatefulWidget {
-  const Interface4({Key? key, required this.title}) : super(key: key);
+class MenuCampos extends StatefulWidget {
+  const MenuCampos({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  State<Interface4> createState() => _Interface4();
+  State<MenuCampos> createState() => _MenuCampos();
 }
 
-class _Interface4 extends State<Interface4> {
+class _MenuCampos extends State<MenuCampos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,7 @@ class _Interface4 extends State<Interface4> {
                   'Digite seu nome', Icon(Icons.person), TextInputType.text),
               criarInput('Digite seu e-mail', Icon(Icons.mail),
                   TextInputType.emailAddress),
-              criarInput('Digite seu e-mail', Icon(Icons.password),
+              criarInput('Digite sua senha', Icon(Icons.password),
                   TextInputType.visiblePassword),
             ],
           ),
